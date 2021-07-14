@@ -10,6 +10,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background: var(--theme1);
+  box-sizing: border-box;
 }
 
 .head-cont {
@@ -50,15 +51,17 @@ body {
 .menu-selected {
   background: var(--bk);
 }
+.foot-main {
+  width: 100%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+}
 .foot-text {
+  display: block;
   text-align: center;
   padding: 5px 0;
   background-color: var(--bk);
-  position: fixed;
-  bottom: 0;
-  display: block;
-  left: 0;
-  right: 0;
 }
 
 .content-background {
@@ -182,14 +185,147 @@ body {
     background: white;
   }
 }
+
+.contact-cont {
+  background: var(--theme2);
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 3rem;
+  padding: 20px;
+}
+.contact-left {
+  width: 40%;
+}
+.contact-right {
+  padding: 25px;
+  text-align: center;
+  width: 100%;
+  border-left: 3px solid white;
+}
+.contact-form-title {
+  font-size: 2rem;
+}
+.cf-label {
+  text-align: left;
+  display: block;
+  padding: 0;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.cf-input {
+  outline: none;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid var(--theme1);
+
+  color: var(--theme1);
+  font-weight: 600;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.cf-submit {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  position: relative;
+}
+
+.cf-submit:hover {
+  background-color: var(--theme1);
+}
+
+.img-cont {
+  text-align: center;
+}
+.gitImg {
+  width: 50px;
+  height: 50px;
+}
+
 @media only screen and (max-width: 1540px) {
   .display-menu-grid {
     justify-items: center;
   }
 }
+@media only screen and (max-width: 1000px) {
+  .contact-cont {
+    display: block;
+  }
+  .contact-form-title {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 3px solid white;
+  }
+  .contact-left {
+    width: 100%;
+  }
+  .contact-right {
+    padding: 0px;
+    text-align: left;
+    border: none;
+  }
+  .cf-input {
+    width: 100%;
+  }
+  .gitImg {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
 
 @media only screen and (max-width: 600px) {
+  .contact-cont {
+    width: 80%;
+  }
   .menu-cont {
     width: 80%;
+  }
+  .content-title {
+    font-size: 3rem;
+  }
+  .home-page-text {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .item-image {
+    width: 255px;
+    height: 200px;
+  }
+  .item-card {
+    width: 255px;
+  }
+  .display-menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
   }
 }

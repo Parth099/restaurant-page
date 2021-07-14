@@ -3,13 +3,15 @@ import "./reset.css";
 
 import { genHome } from "./home.js";
 import { initMenu } from "./menu.js";
+import { createContactCard } from "./contact.js";
 
 var lastLoaded = "Home";
 const generatorHash = {
   Home: genHome,
   Menu: initMenu, //() => console.log("Menu"),
-  "Contact Me": () => console.log("Contact Me"),
+  "Contact Me": createContactCard,
 };
+generatorHash[lastLoaded](); //landing page is 'Home'
 console.log("Fart");
 
 //exploits js dynamic 'this'
@@ -46,5 +48,3 @@ function resetPage() {
   div.setAttribute("id", "content");
   document.body.appendChild(div);
 }
-
-generatorHash["Home"]();
